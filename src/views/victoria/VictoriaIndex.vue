@@ -24,7 +24,7 @@
           <span style="font-size: 0.3rem; font-weight: bolder">自然与人性的和谐</span><br>
           <span>THE HARMONY OF NATURE AND HUMAN NATURE</span>
         </div>
-        <!-- <img src="../../assets/images/img28.jpg" class="float-img"> -->
+        <img src="../../assets/images/angel7.png" class="float-img">
         <div class="right-bottom"></div>
       </div>
     </div>
@@ -46,13 +46,82 @@
         <span>MORE</span>
       </div>
       <div class="about-bottom">
-        <img src="../../assets/images/img2.jpg">
-        <img src="../../assets/images/img6.jpg">
-        <img src="../../assets/images/img21.jpg">
-        <img src="../../assets/images/img22.jpg">
-        <img src="../../assets/images/img17.jpg">
-        <img src="../../assets/images/img8.jpg">
+        <img src="../../assets/images/angel1.png">
+        <img src="../../assets/images/angel2.png">
+        <img src="../../assets/images/angel3.png">
+        <img src="../../assets/images/angel4.png">
+        <img src="../../assets/images/img7.jpg">
+        <img src="../../assets/images/angel6.png">
       </div>
+    </div>
+    <div class="news">
+      <div class="news-left">
+        <span class="left-dec"></span>
+        <div class="title">
+          <span class="left-title1">新闻动态</span><br>
+          <span class="left-title2">News</span>
+        </div>
+        <div>
+          <img src="../../assets/images/angel9.png" height="600" width="100%">
+        </div>
+      </div>
+      <div class="news-right"> 
+        <el-tabs :tab-position="tabPosition" style="height: 200px;">
+          <el-tab-pane label="维密动态" class="right-content">
+            <img src="../../assets/images/img30.jpg" width="300" height="300">
+            <div class="content-li">
+              <ul>
+                <li><i class="el-icon-caret-right"></i>2018维密秀有哪些中国第一次</li>
+                <li><i class="el-icon-caret-right"></i>2018年维密在哪里开</li>
+                <li><i class="el-icon-caret-right"></i>维密站位曝光：刘雯何穗平起平坐第一排</li>
+                <li><i class="el-icon-caret-right"></i>维密2018新款</li>
+                <li><i class="el-icon-caret-right"></i>奚梦瑶会退出维密吗</li>
+              </ul>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="认识维密"  class="right-content">
+            <img src="../../assets/images/img4.jpg" width="300" height="300">
+            <div class="content-li">
+              <ul>
+                <li><i class="el-icon-caret-right"></i>看秀前你要补习这些维密冷知识</li>
+                <li><i class="el-icon-caret-right"></i>维密背后的秘密</li>
+                <li><i class="el-icon-caret-right"></i>第一届维密</li>
+                <li><i class="el-icon-caret-right"></i>我们熟知的维密天使</li>
+              </ul>
+            </div>
+          </el-tab-pane>
+        </el-tabs>
+      </div>
+    </div>
+    <div class="message">
+      <div class="message-left">
+        <span>在线留言</span>
+        <span style="font-size:0.16rem;margin-top:0.2rem;color:#777;">如果您有意向想进一步沟通，请输入您的姓名和联系方式，我们将第一时间向您回电</span>
+        <el-form label-width="80px" class="form">
+          <el-form-item label="您的姓名">
+            <el-input></el-input>
+          </el-form-item>
+          <el-form-item label="联系方式">
+            <el-input></el-input>
+          </el-form-item>
+        </el-form>
+      </div>
+      <div style="width:3px;height:400px;background-color:#8094ae;margin-top:50px"></div>
+      <div class="message-right">
+        <img src="../../assets/images/img37.jpg" width="90%" height="470px">
+      </div>
+    </div>
+    <div class="footer">
+      <div class="footer-info">
+        <span>维多利亚的秘密</span>
+        <span><i class="el-icon-phone-outline"></i>电话：020-5451254545</span>
+        <span><i class="el-icon-message"></i>邮箱：sierwwp.163.com</span>
+        <span><i class="el-icon-tickets"></i>传真：020-5451254545</span>
+        <span><i class="el-icon-share"></i>官网：https://www.victoriassecret.com</span>
+      </div>
+    </div>
+    <div class="footer2">
+
     </div>
 	</div>
 </template>
@@ -60,6 +129,7 @@
 export default {
   data () {
     return {
+      tabPosition: 'top'
     }
   }
 }
@@ -139,7 +209,7 @@ export default {
     .float-img {
       position: absolute;
       left: 3rem;
-      bottom: 0.7rem;
+      bottom: 0.4rem;
       width: 50%;
     }
     .right-bottom {
@@ -224,7 +294,7 @@ export default {
       height: 7rem;
       padding: 5% 12% 0 12%;
       box-sizing: border-box;
-      background-image:url(../../assets/images/img35.jpg);
+      background-image:url(../../assets/images/gif1.gif);
       background-repeat: no-repeat;
       background-size: 100%;
       img {
@@ -233,5 +303,133 @@ export default {
         padding: 0 0.2rem 0.2rem 0;
       }
     }
-}
+  }
+  .news {
+    width: 100%;
+    display: flex;
+    padding-top: 0.7rem;
+    box-sizing: border-box;
+    font-size: 0.3rem;
+    background-image: url(../../assets/images/img35.jpg);
+    background-attachment: fixed;
+    // background-repeat: no-repeat;
+    .news-left {
+      width: 20%;
+      margin-left: 12%;
+      margin-right: 1rem;
+      .left-dec {
+      display: inline-block;
+      width: 1px;
+      height: 0.7rem;
+      vertical-align: top;
+      margin-right: 0.2rem;
+      background: #fff;
+      }
+      .title {
+        display: inline-block;
+        line-height: 0.35rem;
+        .left-title1 {
+          color: #000;
+          font-weight: bolder;
+        }
+        .left-title2 {
+          color: #fff;
+          font-weight: bolder;
+        }
+      }
+    }
+    .news-right {
+      width: 50%;
+      height: 4.5rem;
+      margin-top: 1.5rem;
+      padding: 0.1rem 0 0 0.5rem;
+      box-sizing: border-box;
+      box-shadow: 10px 10px 10px #999;
+      background: #fff;
+      .right-content {
+        display: flex;
+        font-size: 0.15rem;
+        color: #777;
+        .content-li {
+          width: 55%;
+          padding: 0.3rem;
+          box-sizing: border-box;
+          line-height: 0.5rem;
+          margin-left: 0.2rem;
+          border: solid 1px #d2d2d2;
+          i {
+            margin-right: 0.1rem;
+          }
+        }
+      }
+      .el-tabs__nav-scroll {
+        margin-bottom: 0.3rem;
+      }
+      .el-tabs__item.is-active {
+        color: #006799;
+      }
+      .el-tabs__item {
+        font-size: 0.18rem;
+      }
+      .el-tabs__active-bar {
+        width: 66px;
+        background-color: #006799;
+      }
+    }
+  }
+  .message {
+    width: 100%;
+    display: flex;
+    padding-top: 0.7rem;
+    background: #fff;
+    .message-left {
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      margin: 1rem 1rem 0 12%;
+      span:nth-child(1) {
+        font-size: 0.3rem;
+        font-weight: bolder;
+      }
+      .form {
+        margin: 0.5rem 0;
+        padding: 0.2rem 0.2rem 0 0;
+        border: solid 1px #d2d2d2;
+      }
+      .el-form-item__label {
+        color: #333;
+      }
+    }
+    .message-right {
+      width: 50%;
+      margin-left: 1rem;
+    }
+  }
+  .footer {
+    width: 100%;
+    height: 3.5rem;
+    padding: 0.5rem 0 0 12%;
+    box-sizing: border-box;
+    font-size: 0.16rem;
+    color: #c1c1c1;
+    background: #333;
+    .footer-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 0.5rem;
+      span:nth-child(1) {
+        margin-bottom: 0.1rem;
+        font-size: 0.28rem;
+        color: #fff;
+      }
+      i{
+        margin-right: 0.2rem;
+      }
+    }
+  }
+  .footer2 {
+    width: 100%;
+    height: 1rem;
+    background: #222;
+  }
 </style>
