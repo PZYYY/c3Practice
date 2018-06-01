@@ -3,9 +3,9 @@
     <div class="common">
       <span class="common-title">VICTORIA'S SECRET SHOW</span>
       <ul class="common-li">
-        <li>首页</li>
-        <li>关于我们</li>
-        <li>公司产品</li>
+        <router-link to="/victoriaIndex"><li>首页</li></router-link>
+        <router-link to="/aboutUs"><li>关于我们</li></router-link>
+        <router-link to="/show"><li>围观维密</li></router-link>
         <li>荣誉资质</li>
         <li>新闻资讯</li>
         <li>联系我们</li>
@@ -86,11 +86,9 @@ export default {
       line-height: 200px;
       margin: 0;
     }
-    
     .el-carousel__item:nth-child(2n) {
       background-color: #99a9bf;
     }
-    
     .el-carousel__item:nth-child(2n+1) {
       background-color: #d3dce6;
     }

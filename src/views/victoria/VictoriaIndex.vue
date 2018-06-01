@@ -111,22 +111,15 @@
         <img src="../../assets/images/img37.jpg" width="90%" height="470px">
       </div>
     </div>
-    <div class="footer">
-      <div class="footer-info">
-        <span>维多利亚的秘密</span>
-        <span><i class="el-icon-phone-outline"></i>电话：020-5451254545</span>
-        <span><i class="el-icon-message"></i>邮箱：sierwwp.163.com</span>
-        <span><i class="el-icon-tickets"></i>传真：020-5451254545</span>
-        <span><i class="el-icon-share"></i>官网：https://www.victoriassecret.com</span>
-      </div>
-    </div>
-    <div class="footer2">
-
-    </div>
+    <my-footer></my-footer>
 	</div>
 </template>
 <script>
+import MyFooter from '@/components/victoria/MyFooter'
 export default {
+  components: {
+    MyFooter
+  },
   data () {
     return {
       tabPosition: 'top'
@@ -208,9 +201,9 @@ export default {
     }
     .float-img {
       position: absolute;
-      left: 3rem;
+      left: 2.5rem;
       bottom: 0.4rem;
-      width: 50%;
+      width: 65%;
     }
     .right-bottom {
       width: 90%;
@@ -380,6 +373,7 @@ export default {
   .message {
     width: 100%;
     display: flex;
+    // margin-bottom: 4.5rem;
     padding-top: 0.7rem;
     background: #fff;
     .message-left {
@@ -404,32 +398,5 @@ export default {
       width: 50%;
       margin-left: 1rem;
     }
-  }
-  .footer {
-    width: 100%;
-    height: 3.5rem;
-    padding: 0.5rem 0 0 12%;
-    box-sizing: border-box;
-    font-size: 0.16rem;
-    color: #c1c1c1;
-    background: #333;
-    .footer-info {
-      display: flex;
-      flex-direction: column;
-      line-height: 0.5rem;
-      span:nth-child(1) {
-        margin-bottom: 0.1rem;
-        font-size: 0.28rem;
-        color: #fff;
-      }
-      i{
-        margin-right: 0.2rem;
-      }
-    }
-  }
-  .footer2 {
-    width: 100%;
-    height: 1rem;
-    background: #222;
   }
 </style>
