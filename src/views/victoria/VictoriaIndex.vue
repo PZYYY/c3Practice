@@ -106,9 +106,9 @@
           </el-form-item>
         </el-form>
       </div>
-      <div style="width:3px;height:400px;background-color:#8094ae;margin-top:50px"></div>
+      <div style="width:3px;height:4rem;background-color:#8094ae;margin-top:50px"></div>
       <div class="message-right">
-        <img src="../../assets/images/img37.jpg" width="90%" height="470px">
+        <img src="../../assets/images/img37.jpg" width="90%" height="450px">
       </div>
     </div>
     <my-footer></my-footer>
@@ -380,7 +380,7 @@ export default {
       width: 30%;
       display: flex;
       flex-direction: column;
-      margin: 1rem 1rem 0 12%;
+      margin: 0.9rem 1rem 0 12%;
       span:nth-child(1) {
         font-size: 0.3rem;
         font-weight: bolder;
