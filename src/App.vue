@@ -6,10 +6,10 @@
         <router-link to="/victoriaIndex"><li>首页</li></router-link>
         <router-link to="/aboutUs"><li>关于我们</li></router-link>
         <router-link to="/show"><li>围观维密</li></router-link>
-        <li>荣誉资质</li>
-        <li>新闻资讯</li>
-        <li>联系我们</li>
-        <li>在线资讯</li>
+        <router-link to="/honor"><li>荣誉资质</li></router-link>
+        <!-- <li>新闻资讯</li> -->
+        <router-link to="connection"><li>联系我们</li></router-link>
+        <router-link to="/consult"><li>在线留言</li></router-link>
       </ul>
     </div>
     <div class="carousel">

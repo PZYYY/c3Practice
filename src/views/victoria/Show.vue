@@ -160,6 +160,9 @@ export default {
 						}
 					}
 				}
+				.el-pagination {
+					height: 0.5rem;
+				}
 			}
 		}
 	}
