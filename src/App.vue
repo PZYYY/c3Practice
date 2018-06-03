@@ -54,8 +54,10 @@ export default {
     top: 0;
     left: 0;
     width: 100%;
+    height: 1.1rem;
     display: flex;
-    padding: 0.5rem 5% 0.3rem 12% ;
+    align-items: center;
+    padding: 0 5% 0 12%;
     box-sizing: border-box;
     z-index: 999;
     background: rgba(255, 255, 255, 0.8);
@@ -72,8 +74,21 @@ export default {
       justify-content: space-around;
       padding-top: 0.18rem;
       list-style: none;
-      color: #666;
       font-size: 0.16rem;
+      li {
+        width: 0.64rem;
+        height: 1rem;
+        text-align: center;
+        line-height: 1rem;
+      }
+      li:hover {
+        width: 0.64rem;
+        height: 1rem;
+        text-align: center;
+        line-height: 1rem;
+        color: #fff;
+        background: #2c3e50;
+      }
     }
   }
   .carousel {
