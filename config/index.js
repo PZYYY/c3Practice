@@ -11,7 +11,7 @@ module.exports = {
     index: path.resolve(__dirname, '../dist/index.html'),
     assetsRoot: path.resolve(__dirname, '../dist'),
     // assetsSubDirectory: 'static',
-    assetsSubDirectory: './static',
+    assetsSubDirectory: 'static',
     // assetsPublicPath: '/',
     // assetsPublicPath: '/zmhdkt/',
     assetsPublicPath: 'https://github.com/PZYYY/c3-inline/', //线上地址
