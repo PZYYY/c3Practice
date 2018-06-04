@@ -13,13 +13,16 @@
             <span>Show Time</span>
             <span class="top-dec"></span>
           </div>
-          <div>
-            <img src="../../assets/images/img5.jpg" width="100%">
+          <div style="width:6.37rem;height:3.58rem;overflow:hidden;">
+            <div class="left-img">
+              <img src="../../assets/images/img5.jpg" width="637">
+              <img src="../../assets/images/img1.jpg" width="637">
+            </div>
           </div>
         </div>
       </div>
       <div class="newfood-right">
-        <!-- <img src="../../assets/images/img31.jpg" class="float-img1"> -->
+        <!-- <img src="../../assets/images/img14.jpg" class="float-img1"> -->
         <div class="right-title">
           <span style="font-size: 0.3rem; font-weight: bolder">自然与人性的和谐</span><br>
           <span>THE HARMONY OF NATURE AND HUMAN NATURE</span>
@@ -62,13 +65,17 @@
           <span class="left-title2">News</span>
         </div>
         <div>
-          <img src="../../assets/images/angel9.png" height="600" width="100%">
+          <img src="../../assets/images/angel9.png" height="600" width="100%" class="news-img">
         </div>
       </div>
       <div class="news-right"> 
         <el-tabs :tab-position="tabPosition" style="height: 200px;">
           <el-tab-pane label="维密动态" class="right-content">
-            <img src="../../assets/images/img30.jpg" width="300" height="300">
+            <div class="content" style="width:300px;height:300px">
+              <div class="img-mask"></div>
+              <img src="../../assets/images/img30.jpg" width="100%">
+            </div>
+            <!-- <img src="../../assets/images/img30.jpg" width="300" height="300" class="right-img"> -->
             <div class="content-li">
               <ul>
                 <li><i class="el-icon-caret-right"></i>2018维密秀有哪些中国第一次</li>
@@ -80,7 +87,10 @@
             </div>
           </el-tab-pane>
           <el-tab-pane label="认识维密"  class="right-content">
-            <img src="../../assets/images/img4.jpg" width="300" height="300">
+            <div class="content" style="width:300px;height:300px">
+              <img src="../../assets/images/img4.jpg" width="100%">
+              <div class="img-mask"></div>
+            </div>
             <div class="content-li">
               <ul>
                 <li><i class="el-icon-caret-right"></i>看秀前你要补习这些维密冷知识</li>
@@ -175,6 +185,16 @@ export default {
           background: #fff;
         }
       }
+      .left-img {
+        display: flex;
+        width: 12.74rem;
+        height: 3.58rem;
+        transition: 500ms;
+      }
+      .left-img:hover {
+        transform: translate(-6.37rem);
+        transition: 500ms;
+      }
     }
   }
   .newfood-right {
@@ -189,9 +209,13 @@ export default {
     .float-img1 {
       position: absolute;
       top: 0.4rem;
-      left: -2rem;
+      left: -3rem;
       width: 90%;
-      // height: 40%;
+      transition: 1s;
+    }
+    .float-img1:hover {
+      transform: scale(0.8);
+      transition: 1s;
     }
     .right-title {
       display: flex;
@@ -204,6 +228,11 @@ export default {
       left: 2.5rem;
       bottom: 0.4rem;
       width: 65%;
+      transition: 1s;
+    }
+    .float-img:hover {
+      transform: scale(0.9);
+      transition: 1s;
     }
     .right-bottom {
       width: 90%;
@@ -330,6 +359,9 @@ export default {
           font-weight: bolder;
         }
       }
+      .news-img {
+
+      }
     }
     .news-right {
       width: 50%;
@@ -343,6 +375,24 @@ export default {
         display: flex;
         font-size: 0.15rem;
         color: #777;
+        .content {
+          .img-mask {
+            position: absolute;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            width: 3rem;
+            opacity: 0.5;
+            background: rgba(0,0,0,0.5);
+            transform: scale(0);
+            transition: 500ms;
+          }
+          &:hover { // &指同级
+            .img-mask {
+              transform: scale(1);
+            }
+          }
+        }
         .content-li {
           width: 55%;
           padding: 0.3rem;

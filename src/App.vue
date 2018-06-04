@@ -43,6 +43,14 @@ export default {
 
 <style lang="scss">
 #app {
+  .router-link-exact-active { // tab栏激活的样式
+    width: 0.64rem;
+    height: 1rem;
+    text-align: center;
+    line-height: 1rem;
+    color: #fff;
+    background: #2c3e50;
+  }
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -82,12 +90,7 @@ export default {
         line-height: 1rem;
       }
       li:hover {
-        width: 0.64rem;
-        height: 1rem;
-        text-align: center;
-        line-height: 1rem;
-        color: #fff;
-        background: #2c3e50;
+        color: #409eff;
       }
     }
   }

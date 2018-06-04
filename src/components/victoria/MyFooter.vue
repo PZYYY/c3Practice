@@ -1,6 +1,6 @@
 <template>
 	<div>
-		<div class="footer">
+		<div class="footer" ref="myFooter">
 			<div class="footer1">
 				<div class="footer1-info">
 					<span>维多利亚的秘密</span>
@@ -30,7 +30,21 @@
 </template>
 <script>
 export default {
-	name: 'MyFooter'
+	name: 'MyFooter',
+  data () {
+    return {
+      fullHeight: document.documentElement.clientHeight, // 页面高度
+      myFooter: '', // 底部组件
+      footerTop: '' // 底部组件到浏览器顶部的距离
+    }
+  },
+  created () {
+    this.$nextTick(() => {
+      this.myFooter = this.$refs.myFooter
+      this.footerTop = this.myFooter.getBoundingClientRect().top
+    })
+    console.log('212121', this.footerTop)
+  }
 }
 </script>
 <style lang="scss">
