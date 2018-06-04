@@ -14,7 +14,7 @@ module.exports = {
     assetsSubDirectory: './static',
     // assetsPublicPath: '/',
     // assetsPublicPath: '/zmhdkt/',
-    assetsPublicPath: 'http://hd.gzzmedu.com:8080/zmhdkt/',
+    assetsPublicPath: 'https://github.com/PZYYY/c3-inline/', //线上地址
     // assetsPublicPath: 'http://hdkt2.zhbit.com:8080/zmhdkt/',
     productionSourceMap: false, //打包时候是否有map.js
     // Gzip off by default as many popular static hosts such as
@@ -35,7 +35,7 @@ module.exports = {
     port: 8080,
     autoOpenBrowser: true,
     assetsSubDirectory: 'static',
-    assetsPublicPath: 'https://github.com/PZYYY/c3-inline/', //线上地址
+    assetsPublicPath: '/',
     proxyTable: {},
     // CSS Sourcemaps off by default because relative paths are "buggy"
     // with this option, according to the CSS-Loader README
