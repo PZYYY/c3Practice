@@ -65,7 +65,7 @@
           <span class="left-title2">News</span>
         </div>
         <div>
-          <img src="../../assets/images/angel9.png" height="600" width="100%" class="news-img">
+          <img src="../../assets/images/angel9.png" height="600" width="100%" :class="animation" ref="newsImg">
         </div>
       </div>
       <div class="news-right"> 
@@ -126,14 +126,29 @@
 </template>
 <script>
 import MyFooter from '@/components/victoria/MyFooter'
+import { animate } from '@/mixins/mixin'
 export default {
+  mixins: [animate],
   components: {
     MyFooter
   },
   data () {
     return {
-      tabPosition: 'top'
+      tabPosition: 'top',
+      fullHeight: document.documentElement.clientHeight, // 页面高度
+      clientBox: '', // 目标组件
+      clientTop: '', // 目标组件到浏览器顶部的距离
+      animation: '' 
     }
+  },
+  created () {
+    this.$nextTick(() => {
+      this.clientBox = this.$refs.newsImg
+      // this.clientTop = this.clientBox.getBoundingClientRect().top
+      this.animated('right')
+    })
+  },
+  methods: {
   }
 }
 </script>
@@ -359,8 +374,20 @@ export default {
           font-weight: bolder;
         }
       }
-      .news-img {
-
+      .aFadeInRight {
+        animation: fadeInRight 1s linear;
+      }
+        @keyframes fadeInRight {
+        from {
+          opacity: 0;
+          -webkit-transform: translate3d(0, 100%, 0);
+          transform: translate3d(0, 100%, 0);
+        }
+        to {
+          opacity: 1;
+          -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+        }
       }
     }
     .news-right {

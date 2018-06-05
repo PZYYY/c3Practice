@@ -1,42 +1,55 @@
-export const wxConfig = {
+export const animate = {
   created () {
-    this.wxConfig()
   },
   mounted () {
   },
   methods: {
-    /**
-     * 微信jssdk配置
-     * @param {*学校标识} schoolCode
-     * @param {*appid} appid
-     */
-    async wxConfig (schoolCode, appid) {
-      let request = {
-        url: location.href.split('#')[0]
+    animated (animateName) {
+      switch (animateName){
+        case 'top' :
+          window.onscroll = (e) => {
+            this.clientTop = this.clientBox.getBoundingClientRect().top
+            this.fadeInTop(this.clientTop)
+            }
+          break
+        case 'left' :
+          window.onscroll = (e) => {
+            this.clientTop = this.clientBox.getBoundingClientRect().top
+            this.fadeInLeft(this.clientTop)
+          }
+        case 'right' :
+          window.onscroll = (e) => {
+            this.clientTop = this.clientBox.getBoundingClientRect().top
+            this.fadeInRight(this.clientTop)
+          }
+          break;
+        case 'bottom' :
+          window.onscroll = (e) => {
+            this.clientTop = this.clientBox.getBoundingClientRect().top
+            this.fadeInBottom(this.clientTop)
+          }
+          break
       }
-      // let _this = this
-      console.log(request)
-      try {
-        let response = await this.$http.Common.getWXconfig(request)
-        console.log('[success] 微信JSSDK配置', response)
-        if (response.errcode == '0') {
-          wx.config({
-            debug: false,
-            appId: response.data.appId,
-            timestamp: response.data.timestamp,
-            nonceStr: response.data.nonceStr,
-            signature: response.data.signature,
-            jsApiList: ['checkJsApi', 'scanQRCode', 'chooseImage', 'uploadImage', 'previewImage']
-          })
-          wx.error((err) => {
-            console.log(err, '报错信息')
-          })
-        }
-      } catch (error) {
-        // setTimeout(() => {
-        //   _this.wxConfig()
-        // }, 1500)
-        // console.log(error)
+    },
+    fadeInRight () { // 动画（往上淡入）
+      console.log(454)
+      if (this.clientTop < (this.fullHeight - 200)) {
+        this.animation = 'aFadeInRight'
+      }
+    },
+    fadeInLeft () { // 动画（往上淡入）
+      if (this.clientTop < (this.fullHeight - 200)) {
+        this.animation = 'aFadeLeft'
+      }
+    },
+    fadeInTop () { // 动画（往上淡入）
+      if (this.clientTop < (this.fullHeight - 200)) {
+        this.animation = 'aFadeInUp'
+      }
+    },
+    fadeInBottom () { // 动画（往上淡入）
+      if (this.clientTop < (this.fullHeight - 200)) {
+        this.animation = 'aFadeInDown'
       }
     }
   }

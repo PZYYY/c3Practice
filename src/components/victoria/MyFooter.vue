@@ -2,16 +2,18 @@
 	<div>
 		<div class="footer" ref="footerBox">
 			<div class="footer1">
-				<div class="footer1-info">
-					<span>维多利亚的秘密</span>
-					<span><i class="el-icon-phone-outline"></i>电话：020-5451254545</span>
-					<span><i class="el-icon-message"></i>邮箱：sierwwp.163.com</span>
-					<span><i class="el-icon-tickets"></i>传真：020-5451254545</span>
-					<span><i class="el-icon-share"></i>官网：https://www.victoriassecret.com</span>
-				</div>
-        <div style="text-align:center;margin-top:0.3rem;">
-          <img src="../../assets/images/weburl.jpg" width="200" height="200"><br>
-          <span>扫一扫打开官网</span>
+        <div :class="animation" class="footer1-box">
+          <div class="footer1-info">
+            <span>维多利亚的秘密</span>
+            <span><i class="el-icon-phone-outline"></i>电话：020-5451254545</span>
+            <span><i class="el-icon-message"></i>邮箱：sierwwp.163.com</span>
+            <span><i class="el-icon-tickets"></i>传真：020-5451254545</span>
+            <span><i class="el-icon-share"></i>官网：https://www.victoriassecret.com</span>
+          </div>
+          <div style="text-align:center;margin-top:0.3rem;">
+            <img src="../../assets/images/weburl.jpg" width="200" height="200"><br>
+            <span>扫一扫打开官网</span>
+          </div>
         </div>
 			</div>
       <div class="footer2">
@@ -29,29 +31,31 @@
   </div>
 </template>
 <script>
+import { animate } from '@/mixins/mixin'
 export default {
+  mixins: [animate],
 	name: 'MyFooter',
   data () {
     return {
       fullHeight: document.documentElement.clientHeight, // 页面高度
-      footerBox: '', // 底部组件
-      footerTop: '' // 底部组件到浏览器顶部的距离
+      clientBox: '', // 底部组件
+      clientTop: '', // 底部组件到浏览器顶部的距离
+      animation: '' // 底部组件动画效果
     }
   },
   created () {
     this.$nextTick(() => {
-      this.footerBox = this.$refs.footerBox
-      this.footerTop = this.footerBox.getBoundingClientRect().top
-      console.log('212121', this.footerTop)
+      this.clientBox = this.$refs.footerBox
+      this.animated('top')
     })
+  },
+  methods: {
   }
 }
 </script>
 <style lang="scss">
 .footer {
   .footer1 {
-    display: flex;
-    justify-content: space-between;
     width: 100%;
     height: 3.5rem;
     padding: 0.5rem 25% 0 25%;
@@ -59,17 +63,36 @@ export default {
     font-size: 0.16rem;
     color: #c1c1c1;
     background: #333;
-    .footer1-info {
+    .footer1-box {
       display: flex;
-      flex-direction: column;
-      line-height: 0.5rem;
-      span:nth-child(1) {
-        margin-bottom: 0.1rem;
-        font-size: 0.28rem;
-        color: #fff;
+      justify-content: space-between;
+      .footer1-info {
+        display: flex;
+        flex-direction: column;
+        line-height: 0.5rem;
+        span:nth-child(1) {
+          margin-bottom: 0.1rem;
+          font-size: 0.28rem;
+          color: #fff;
+        }
+        i {
+          margin-right: 0.2rem;
+        }
       }
-      i {
-        margin-right: 0.2rem;
+    }
+    .aFadeInUp {
+      animation: fadeInUp 1s linear;
+    }
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        -webkit-transform: translate3d(0, 100%, 0);
+        transform: translate3d(0, 100%, 0);
+      }
+      to {
+        opacity: 1;
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
       }
     }
   }

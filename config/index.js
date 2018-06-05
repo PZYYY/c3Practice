@@ -14,7 +14,7 @@ module.exports = {
     assetsSubDirectory: 'static',
     // assetsPublicPath: '/',
     // assetsPublicPath: '/zmhdkt/',
-    assetsPublicPath: 'https://github.com/PZYYY/c3-inline/', //线上地址
+    assetsPublicPath: 'https://pzyyy.github.io/c3-inline/', //线上地址
     // assetsPublicPath: 'http://hdkt2.zhbit.com:8080/zmhdkt/',
     productionSourceMap: false, //打包时候是否有map.js
     // Gzip off by default as many popular static hosts such as
