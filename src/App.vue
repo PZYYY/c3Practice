@@ -13,7 +13,7 @@
       </ul>
     </div>
     <div class="carousel">
-      <el-carousel :interval="4000" type="card" height="400px" :autoplay='false' indicator-position="none">
+      <el-carousel :interval="5000" type="card" height="400px" :autoplay='true' indicator-position="none">
         <el-carousel-item v-for="(item, index) in carouselImg" :key="index">
           <!-- <h3>{{ item }}</h3> -->
           <img :src="item.url" width="100%">

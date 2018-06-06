@@ -46,10 +46,15 @@ export default {
   created () {
     this.$nextTick(() => {
       this.clientBox = this.$refs.footerBox
-      this.animated('top')
+      this.animated()
     })
   },
   methods: {
+  },
+  watch: { // 监听clientTop的变化
+    clientTop(n, o) {
+      this.fadeInTop()
+    }
   }
 }
 </script>

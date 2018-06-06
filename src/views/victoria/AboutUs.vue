@@ -17,34 +17,42 @@
 			<div>
 				<img src="../../assets/images/img38.jpg"><br>
 				<span>Bella Hadid</span>
+				<span class="float-block">#Bella Hadid</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img39.jpg"><br>
 				<span>Karlie Kloss</span>
+				<span class="float-block">#Karlie Kloss</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img40.jpg"><br>
 				<span>Jasmine Tookes</span>
+				<span class="float-block">#Jasmine Tookes</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img41.jpg"><br>
-				<span>Fantasy Bra</span>
+				<span>Lais Ribeiro</span>
+				<span class="float-block">#Lais Ribeiro</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img42.jpg"><br>
 				<span>Candice Swanepoel</span>
+				<span class="float-block">#Candice Swanepoel</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img43.jpg"><br>
 				<span>Adriana Lima</span>
+				<span class="float-block">#Adriana Lima</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img44.jpg"><br>
 				<span>Alessandra Ambrosio</span>
+				<span class="float-block">#Alessandra Ambrosio</span>
 			</div>
 			<div>
 				<img src="../../assets/images/img45.jpg"><br>
 				<span>Alessandra Ambrosio</span>
+				<span class="float-block">#Alessandra Ambrosio</span>
 			</div>
 		</div>
 		<my-footer></my-footer>
@@ -89,9 +97,30 @@ export default {
 		 margin-left: 10%;
 		 text-align: center;
 		 div {
+			 position: relative;
 			 margin-bottom: 0.5rem;
 			 img {
 				 margin-bottom: 0.2rem;
+			 }
+			.float-block {
+					position: absolute;
+					opacity: 0;
+					transform: translate3d(0, -100%, 0);
+				}
+			 &:hover {
+			 	.float-block {
+					position: absolute;
+					height: 0.28rem;
+					line-height: 0.28rem;
+					bottom: 0.3rem;
+					left: -0.1rem;
+					right: -0.1rem;
+					color: #fff;
+					background: rgba(0, 0, 0, .5);
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+					transition: 250ms linear;
+				 }
 			 }
 		 }
 	 }

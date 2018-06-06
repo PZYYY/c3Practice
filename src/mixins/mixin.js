@@ -4,51 +4,31 @@ export const animate = {
   mounted () {
   },
   methods: {
-    animated (animateName) {
-      switch (animateName){
-        case 'top' :
-          window.onscroll = (e) => {
-            this.clientTop = this.clientBox.getBoundingClientRect().top
-            this.fadeInTop(this.clientTop)
-            }
-          break
-        case 'left' :
-          window.onscroll = (e) => {
-            this.clientTop = this.clientBox.getBoundingClientRect().top
-            this.fadeInLeft(this.clientTop)
-          }
-        case 'right' :
-          window.onscroll = (e) => {
-            this.clientTop = this.clientBox.getBoundingClientRect().top
-            this.fadeInRight(this.clientTop)
-          }
-          break;
-        case 'bottom' :
-          window.onscroll = (e) => {
-            this.clientTop = this.clientBox.getBoundingClientRect().top
-            this.fadeInBottom(this.clientTop)
-          }
-          break
+    animated () {
+      window.addEventListener('scroll', () => {
+        this.clientTop = this.clientBox.getBoundingClientRect().top // 目标组件到浏览器顶部的距离
+      })
+      // window.onscroll = () => {
+      //   this.clientTop = this.clientBox.getBoundingClientRect().top // 目标组件到浏览器顶部的距离
+      // }
+    },
+    fadeInRight () {
+      if (this.clientTop < (this.fullHeight - 100)) {
+        this.animation = 'aFadeInRight' // 样式名
       }
     },
-    fadeInRight () { // 动画（往上淡入）
-      console.log(454)
-      if (this.clientTop < (this.fullHeight - 200)) {
-        this.animation = 'aFadeInRight'
-      }
-    },
-    fadeInLeft () { // 动画（往上淡入）
-      if (this.clientTop < (this.fullHeight - 200)) {
+    fadeInLeft () {
+      if (this.clientTop < (this.fullHeight - 100)) {
         this.animation = 'aFadeLeft'
       }
     },
     fadeInTop () { // 动画（往上淡入）
-      if (this.clientTop < (this.fullHeight - 200)) {
+      if (this.clientTop < (this.fullHeight - 100)) {
         this.animation = 'aFadeInUp'
       }
     },
-    fadeInBottom () { // 动画（往上淡入）
-      if (this.clientTop < (this.fullHeight - 200)) {
+    fadeInBottom () {
+      if (this.clientTop < (this.fullHeight - 100)) {
         this.animation = 'aFadeInDown'
       }
     }

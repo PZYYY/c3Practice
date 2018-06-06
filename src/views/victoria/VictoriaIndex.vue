@@ -144,11 +144,15 @@ export default {
   created () {
     this.$nextTick(() => {
       this.clientBox = this.$refs.newsImg
-      // this.clientTop = this.clientBox.getBoundingClientRect().top
-      this.animated('right')
+      this.animated()
     })
   },
   methods: {
+  },
+  watch: {
+    clientTop (n, o) {
+      this.fadeInRight()
+    }
   }
 }
 </script>
@@ -380,8 +384,8 @@ export default {
         @keyframes fadeInRight {
         from {
           opacity: 0;
-          -webkit-transform: translate3d(0, 100%, 0);
-          transform: translate3d(0, 100%, 0);
+          -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
         }
         to {
           opacity: 1;
